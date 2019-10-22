@@ -8,7 +8,7 @@ const initialState = {
   loading: false,
   departments: null,
   error: null,
-}
+};
 
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -16,17 +16,17 @@ export default (state = initialState, action) => {
       return {
         loading: true,
         error: null
-      }
+      };
     case GET_DEPARTMENTS_SUCCESS:
       return {
         loading: false,
         departments: action.payload.data.departments
-      }
+      };
     case GET_DEPARTMENTS_FAIL:
       return {
         loading: false,
         error: action.payload.error.response.data
-      }
+      };
     default:
       return state
   }

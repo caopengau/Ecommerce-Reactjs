@@ -4,13 +4,13 @@ import axios from 'axios'
 import qs from 'qs'
 import paypalConfig from '../../configs/paypalConfig'
 
-const URL = 'https://zack-ecommerce-nodejs.herokuapp.com'
+const URL = 'https://zack-ecommerce-nodejs.herokuapp.com';
 // const URL = 'http://localhost:4000'
 
 const serverCall = (config) => {
   //header authorization
   if (Auth.user_token) {
-    const token = Auth.getToken()
+    const token = Auth.getToken();
     config.headers = {
       "authorization": token
     }
@@ -28,15 +28,15 @@ const serverCall = (config) => {
         }
       }
       if(error.response.status===401){
-        Auth.logout()
-        jumpTo('/login')
+        Auth.logout();
+        jumpTo('/login');
         throw error
       }
       return Promise.reject(error);
     });
-  config.baseURL = URL
+  config.baseURL = URL;
   return axios(config)
-}
+};
 export default serverCall
 
 export const login = (email, password) => {
@@ -46,17 +46,17 @@ export const login = (email, password) => {
       "email": email,
       "password": password
     }
-  }
+  };
   return serverCall({
     method: 'POST',
     url: '/users/login',
     data: body
   })
     .then(res => {
-      Auth.setUserToken(res.data.user_token)
+      Auth.setUserToken(res.data.user_token);
       return res
     })
-}
+};
 
 export const getPaypalToken = () => {
   return axios({
@@ -69,4 +69,4 @@ export const getPaypalToken = () => {
     },
     data: qs.stringify({ "grant_type": "client_credentials" })
   })
-}
+};

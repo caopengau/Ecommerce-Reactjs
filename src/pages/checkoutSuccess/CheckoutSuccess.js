@@ -10,15 +10,15 @@ export default class CheckoutSuccess extends Component {
 
   }
   componentDidMount() {
-    const UrlQuery = this.props.location.search
-    const queryPair = mapSearchURL(UrlQuery)
+    const UrlQuery = this.props.location.search;
+    const queryPair = mapSearchURL(UrlQuery);
     if (queryPair.has("paymentId") && queryPair.has("PayerID")) {
       this.props.getPayment(queryPair.get("paymentId"), queryPair.get("PayerID"))
     }
   }
 
   render() {
-    const payment = this.props.payment
+    const payment = this.props.payment;
     return (
       <div className={styles.outbox}>
         <Header />

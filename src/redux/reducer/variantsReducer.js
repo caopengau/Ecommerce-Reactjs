@@ -8,7 +8,7 @@ const initialState = {
   variants: null,
   loading: false,
   error: null,
-}
+};
 
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -17,19 +17,19 @@ export default (state = initialState, action) => {
         ...state,
         loading: true,
         error: null
-      }
+      };
     case GET_VARIANTS_QUERY_SUCCESS:
       return {
         ...state,
         loading: false,
         variants: action.payload.data.variants
-      }
+      };
     case GET_VARIANTS_QUERY_FAIL:
       return {
         ...state,
         loading: false,
         error: action.payload.error
-      }
+      };
     default:
       return state
   }

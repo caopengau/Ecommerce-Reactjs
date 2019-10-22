@@ -7,8 +7,8 @@ import jumpTo from '../../modules/Navigation'
 
 
 export default function ShoppingBag(props) {
-  const { totalPrice, items } = props.cart
-  const { postCart } = props
+  const { totalPrice, items } = props.cart;
+  const { postCart } = props;
   return (
     <div className={styles.outbox}>
       <Header />

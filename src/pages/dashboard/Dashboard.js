@@ -16,7 +16,7 @@ export default class Dashboard extends Component {
     }
   }
   render() {
-    const { products, applyFilters } = this.props
+    const { products, applyFilters } = this.props;
     return (
       <div className={styles.outbox}>
         {/* Header */}

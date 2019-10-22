@@ -43,5 +43,5 @@ const validate = (validations, val) => {
     }
   }
   return { isValid: true }
-}
+};
 

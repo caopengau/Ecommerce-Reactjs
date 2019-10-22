@@ -6,7 +6,7 @@ export default function SubSelection({ selected_arr, onClick, content, category 
     <div className={`${styles.outbox}`}>
       <div className={styles.box}>
         {content.map(c => {
-          c = c.toUpperCase()
+          c = c.toUpperCase();
           return (
             <div
               key={c}

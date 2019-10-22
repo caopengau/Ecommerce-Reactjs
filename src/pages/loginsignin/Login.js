@@ -18,7 +18,7 @@ const INPUT_CONFIG = [
     name: "password",
     validations: [validateExistence, validateLength(6, 15), validateLowerCase, validateUpperCase]
   }
-]
+];
 
 export default function Login({ postToken, login_loading, login_error }) {
   return (

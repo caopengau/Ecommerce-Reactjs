@@ -18,7 +18,7 @@ export default class ProductOverview extends Component {
     }
   }
   componentDidMount() {
-    this.props.getProduct(this.props.location.pathname.split("/").slice(-1)[0])
+    this.props.getProduct(this.props.location.pathname.split("/").slice(-1)[0]);
     this.props.getVariantsByProductId(this.props.location.pathname.split("/").slice(-1)[0])
   }
 
@@ -31,13 +31,13 @@ export default class ProductOverview extends Component {
       selectedSize: '',
       id: variant._id
     })
-  }
+  };
 
   clickSize = (s) => {
     this.setState({
       selectedSize: s
     })
-  }
+  };
 
   addToBag = () => {
     this.props.postCart(
@@ -45,7 +45,7 @@ export default class ProductOverview extends Component {
     ).then(res => {
       jumpTo('/bag')
     })
-  }
+  };
 
   render() {
     return (

@@ -26,7 +26,7 @@ const INPUT_CONFIG = [
     name: "verifyPassword",
     validations: [validateExistence, validateLength(6, 15), validateLowerCase, validateUpperCase]
   },
-]
+];
 
 
 export default function Signin({signin,signin_loading,signin_error}) {

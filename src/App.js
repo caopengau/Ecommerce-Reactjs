@@ -41,8 +41,8 @@ class App extends Component {
 }
 const mapStoreToProps = state => ({
   token: state.token.user_token
-})
+});
 const mapDispatchToProps = {
   insertToken
-}
+};d
 export default connect(mapStoreToProps, mapDispatchToProps)(App);

@@ -6,14 +6,14 @@
  * }
  */
 export default (state) => {
-  let result = ''
-  let order = ''
-  let department = ''
-  let range = ''
+  let result = '';
+  let order = '';
+  let department = '';
+  let range = '';
   for (let name in state) {
     // order filter
     if (name === 'order') {
-      let temp = ''
+      let temp = '';
       for (const v of state[name]) {
         temp = v
       }
@@ -26,7 +26,7 @@ export default (state) => {
     }
     // department filter
     if (name === 'department') {
-      let _base_str = ''
+      let _base_str = '';
       if (state[name].length > 1) {
         _base_str = '&department='
       } else {
@@ -38,7 +38,7 @@ export default (state) => {
     }
     // price filter
     if (name === 'price') {
-      let _price_str_arr = []
+      let _price_str_arr = [];
       for (let p of state[name]) {
         if (p.match(/less/i)) {
           p = p.replace(/[\D]+/i, '0 - ')
@@ -49,11 +49,11 @@ export default (state) => {
         _price_str_arr = _price_str_arr.concat(p.match(/[\d]+/g))
       }
       // sort the array
-      let sorted_matched_arr = _price_str_arr.sort(function (a, b) { return a - b })
+      let sorted_matched_arr = _price_str_arr.sort(function (a, b) { return a - b });
       // remove duplicates
       for (let index = 0; index < sorted_matched_arr.length; index++) {
         if (sorted_matched_arr[index] === sorted_matched_arr[index + 1]) {
-          sorted_matched_arr.splice(index, 2)
+          sorted_matched_arr.splice(index, 2);
           index--
         }
       }

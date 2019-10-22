@@ -14,12 +14,12 @@ export default class Filter_md extends Component {
     this.setState(prevState => ({
       isShow: !prevState.isShow
     }))
-  }
+  };
   clickClear = () => {
     this.props.clear()
-  }
+  };
   render() {
-    const { onChange, clear, selected_name, configs } = this.props
+    const { onChange, clear, selected_name, configs } = this.props;
     return (
       <div className={styles.outbox}>
         <div className={styles.panels}>
@@ -50,7 +50,7 @@ export default class Filter_md extends Component {
             </div>
             <div className={styles.box}>
               {configs['order'].map(n => {
-                n = n.toUpperCase()
+                n = n.toUpperCase();
                 return (
                   <Selection
                     key={n}

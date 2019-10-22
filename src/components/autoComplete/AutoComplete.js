@@ -9,28 +9,28 @@ export default class AutoComplete extends Component {
     }
   }
   handleChange = (e) => {
-    const input = e.target.value
-    this.props.filter(input)
+    const input = e.target.value;
+    this.props.filter(input);
     if(this.props.onChange){
       this.props.onChange(input)
     }
     this.setState({
       val: input
     })
-  }
+  };
   handleFocus = () => {
     this.setState({
       isFocus: true
     })
-  }
+  };
   handleBlur = () => {
-    let blurTimer=null
+    let blurTimer=null;
     blurTimer=setTimeout(() => {
       this.setState({
         isFocus: false
       },()=>clearTimeout(blurTimer))
     }, 100);
-  }
+  };
   handleClick = (v) => {
     if(this.props.suggest_value){
       this.props.suggest_value(v)
@@ -38,9 +38,9 @@ export default class AutoComplete extends Component {
     this.setState({
       val: v
     })
-  }
+  };
   render() {
-    const r = this.props.filter_result
+    const r = this.props.filter_result;
     return (
       <div className={styles.outbox} style={this.props.style}>
         <input

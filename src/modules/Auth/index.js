@@ -9,7 +9,7 @@ class Auth {
     return this.user_token.user_id
   }
   setUserToken(new_token) {
-    this.user_token = new_token
+    this.user_token = new_token;
     localStorage.setItem('auth', JSON.stringify(new_token))
   }
   logout() {

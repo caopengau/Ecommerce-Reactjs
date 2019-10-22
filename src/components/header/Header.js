@@ -10,7 +10,7 @@ import MediaQuery from 'react-responsive'
 
 export default class Header extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       input: '',
       isToggle: false
@@ -20,31 +20,31 @@ export default class Header extends Component {
     this.setState({
       input: v
     })
-  }
+  };
   handleSuggest = (v) => {
     this.setState({
       input: v
     })
-  }
+  };
   handleToggle = () => {
     this.setState(prevState => {
       return {
         isToggle: !prevState.isToggle
       }
     })
-  }
+  };
   closeToggle = () => {
     this.setState({
       isToggle: false
     })
-  }
+  };
   render() {
     const { user_token,
       departments,
       search,
       getProductsByCategory,
-      getAllProducts } = this.props
-    let visibility = "hide"
+      getAllProducts } = this.props;
+    let visibility = "hide";
     if (this.state.isToggle) {
       visibility = "show"
     }
@@ -64,7 +64,7 @@ export default class Header extends Component {
               {/* logo */}
               <div className={styles.logo}
                 onClick={() => {
-                  getAllProducts()
+                  getAllProducts();
                   jumpTo('/dashboard')
                 }}
               >
@@ -154,7 +154,7 @@ export default class Header extends Component {
             {/* logo */}
             <div className={styles.logo}
               onClick={() => {
-                getAllProducts()
+                getAllProducts();
                 jumpTo('/dashboard')
               }}
             >

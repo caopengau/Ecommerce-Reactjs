@@ -11,7 +11,7 @@ const initialState = {
   cart: {},
   loading: false,
   error: {},
-}
+};
 
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -20,37 +20,37 @@ export default (state = initialState, action) => {
         ...state,
         loading: true,
         error: {}
-      }
+      };
     case POST_CART_SUCCESS:
       return {
         ...state,
         cart: action.payload.data.cart,
         loading: false
-      }
+      };
     case POST_CART_FAIL:
       return {
         ...state,
         loading: false,
         error: action.payload.error.response.data
-      }
+      };
     case GET_CART_BY_USERID_BEGIN:
       return {
         ...state,
         loading: true,
         error: {}
-      }
+      };
     case GET_CART_BY_USERID_SUCCESS:
       return {
         ...state,
         cart: action.payload.data.cart,
         loading: false
-      }
+      };
     case GET_CART_BY_USERID_FAIL:
       return {
         ...state,
         loading: false,
         error: action.payload.error.response.data
-      }
+      };
     default:
       return state
   }

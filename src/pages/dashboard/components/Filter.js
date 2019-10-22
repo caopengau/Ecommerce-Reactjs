@@ -8,25 +8,25 @@ import Filter_md from './Filter_md'
 
 export default class Filter extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.FILTER_CONFIG = {
       order: ['Ascending', 'Descending'],
       department: ['Men', 'Women'],
       price: ['Less Than $29', '$29 - $39', '$39 - $49', '$49 - $89', 'Greater Than $89']
-    }
-    this.initialState = {}
+    };
+    this.initialState = {};
     this.state = this.initialState
   }
   handleChange = (e, category, name) => {
-    let tagName = ''
-    let isChecked = false
+    let tagName = '';
+    let isChecked = false;
     //handle div click
     if (name) {
-      tagName = name.toUpperCase()
+      tagName = name.toUpperCase();
       isChecked = !!!(this.state[category] && this.state[category].includes(name))
     } else {
       // handle input checkbox
-      tagName = e.target.name.toUpperCase()
+      tagName = e.target.name.toUpperCase();
       isChecked = e.target.checked
     }
     this.setState(prevState => {
@@ -43,7 +43,7 @@ export default class Filter extends Component {
         }
       } else {
         //remove category value from array
-        const new_prop_array = prevState[category].filter(n => n !== tagName)
+        const new_prop_array = prevState[category].filter(n => n !== tagName);
         return {
           [category]: new_prop_array
         }
@@ -51,18 +51,18 @@ export default class Filter extends Component {
     }, () => {
       this.props.applyFilters(generateFilterString(this.state))
     })
-  }
+  };
   handleCloseTag = (category, name) => {
     this.setState(prevState => {
-      const new_prop_array = prevState[category].filter(n => n !== name)
+      const new_prop_array = prevState[category].filter(n => n !== name);
       return {
         [category]: new_prop_array
       }
     }, () => this.props.applyFilters(generateFilterString(this.state)))
-  }
+  };
   clearAllFilter = () => {
     this.setState({ order: [], price: [], department: [] }, () => this.props.applyFilters(''))
-  }
+  };
   render() {
     return (
       <div>

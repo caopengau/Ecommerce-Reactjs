@@ -27,7 +27,7 @@ export default function Menu({
       {/* all product */}
       <div className={styles.tag}
         onClick={() => {
-          getAllProducts()
+          getAllProducts();
           jumpTo('/dashboard')
         }}
       >
