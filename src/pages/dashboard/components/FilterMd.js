@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import styles from '../stylesheets/filter_md.module.sass'
+import styles from '../stylesheets/FilterMd.module.sass'
 import Selection from './Selection'
 import SubSelection from './SubSelection'
 
-export default class Filter_md extends Component {
+export default class FilterMd extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,7 +19,7 @@ export default class Filter_md extends Component {
     this.props.clear()
   };
   render() {
-    const { onChange, clear, selected_name, configs } = this.props;
+    const { onChange, selected_name, configs } = this.props;
     return (
       <div className={styles.outbox}>
         <div className={styles.panels}>

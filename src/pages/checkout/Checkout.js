@@ -4,10 +4,9 @@ import CheckoutTable from './components/CheckoutTable'
 import Subtotal from './components/Subtotal'
 import Header from '../../components/header/headerContainer'
 export default class Checkout extends Component {
-  constructor(props) {
-    super(props)
-
-  }
+  // constructor(props) {
+  //   super(props)
+  // }
   componentDidMount() {
     if (Object.keys(this.props.cart).length < 1) {
       this.props.getCartByUserId()

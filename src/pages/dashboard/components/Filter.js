@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import Checkbox from './Checkbox'
 import styles from '../stylesheets/filter.module.sass'
 import generateFilterString from '../utils/generateFilterString'
-import device, { size } from '../../../modules/mediaQuery'
+import device from '../../../modules/mediaQuery'
 import MediaQuery from 'react-responsive'
-import Filter_md from './Filter_md'
+import FilterMd from './FilterMd'
 
 export default class Filter extends Component {
   constructor(props) {
@@ -85,7 +85,7 @@ export default class Filter extends Component {
                       onChange={this.handleChange}
                       name={n}
                       category='order'
-                      isChecked={this.state['order'] && this.state['order'].includes(n.toUpperCase()) || false}
+                      isChecked={(this.state['order'] && this.state['order'].includes(n.toUpperCase())) || false}
                     />
                   )}
                 </div>
@@ -100,7 +100,7 @@ export default class Filter extends Component {
                       onChange={this.handleChange}
                       name={n}
                       category='department'
-                      isChecked={this.state['department'] && this.state['department'].includes(n.toUpperCase()) || false}
+                      isChecked={(this.state['department'] && this.state['department'].includes(n.toUpperCase())) || false}
                     />
                   )}
                 </div>
@@ -115,7 +115,7 @@ export default class Filter extends Component {
                       onChange={this.handleChange}
                       name={n}
                       category='price'
-                      isChecked={this.state['price'] && this.state['price'].includes(n.toUpperCase()) || false}
+                      isChecked={(this.state['price'] && this.state['price'].includes(n.toUpperCase())) || false}
                     />
                   )}
                 </div>
@@ -145,7 +145,7 @@ export default class Filter extends Component {
           </div>
         </MediaQuery >
         <MediaQuery query={device.max.tablet}>
-          <Filter_md
+          <FilterMd
             onChange={this.handleChange}
             clear={this.clearAllFilter}
             configs={this.FILTER_CONFIG}

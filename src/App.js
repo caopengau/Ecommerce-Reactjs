@@ -44,5 +44,5 @@ const mapStoreToProps = state => ({
 });
 const mapDispatchToProps = {
   insertToken
-};d
+};
 export default connect(mapStoreToProps, mapDispatchToProps)(App);

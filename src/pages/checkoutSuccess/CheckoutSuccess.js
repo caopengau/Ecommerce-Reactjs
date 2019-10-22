@@ -5,10 +5,9 @@ import Header from '../../components/header/headerContainer'
 import checkMark from '../../assets/images/checkmark.svg'
 import styles from './stylesheet/checkoutSuccess.module.sass'
 export default class CheckoutSuccess extends Component {
-  constructor(props) {
-    super(props);
-
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
   componentDidMount() {
     const UrlQuery = this.props.location.search;
     const queryPair = mapSearchURL(UrlQuery);

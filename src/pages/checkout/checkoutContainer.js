@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import Checkout from './Checkout'
-import {getCheckoutUrl, getPaypalUrl} from '../../redux/action/checkoutAction'
+import {getCheckoutUrl} from '../../redux/action/checkoutAction'
 import {getCartByUserId} from '../../redux/action/cartAction'
 
 const mapStoreToProps = state => ({

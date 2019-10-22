@@ -5,7 +5,7 @@ import Menu from './components/Menu'
 import Search from './components/Search'
 import jumpTo,{go} from '../../modules/Navigation'
 import Auth from '../../modules/Auth'
-import device, { size } from '../../modules/mediaQuery'
+import device from '../../modules/mediaQuery'
 import MediaQuery from 'react-responsive'
 
 export default class Header extends Component {
