@@ -5,7 +5,7 @@ import qs from 'qs'
 import paypalConfig from '../../configs/paypalConfig'
 
 // const URL = 'https://zack-ecommerce-nodejs.herokuapp.com';
-const URL = 'https://www.studyornot.com:3000';
+const URL = 'http://www.studyornot.com:3000';
 // const URL = 'http://localhost:3000';
 
 const serverCall = (config) => {
