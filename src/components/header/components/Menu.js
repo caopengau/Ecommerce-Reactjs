@@ -14,7 +14,7 @@ export default function Menu({
         {/* departments */}
         {departments && departments.map(d =>
           <div className={styles.tag}
-            key={d.departmentName}
+            key={d._id}
           >
             <DropList
               clickCategory={(c) => getProductsByCategory(c)}

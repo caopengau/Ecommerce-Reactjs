@@ -14,7 +14,7 @@ export default function Variants({ color, size, variants, selectedSize, handleCl
       </div>
       <div className={styles.color_pic}>
         {variants && variants.map(v =>
-          <img onClick={() => handleClick(v)} key={v.color} src={v.imagePath} alt="" />
+          <img onClick={() => handleClick(v)} key={v._id} src={v.imagePath} alt="" />
         )}
       </div>
       <div className={styles.sizes}>

@@ -68,7 +68,7 @@ export default class Header extends Component {
                   jumpTo('/dashboard')
                 }}
               >
-                Zack Market
+                Online Store
               </div>
             </div>
             <div className={styles.mid}>
@@ -158,7 +158,7 @@ export default class Header extends Component {
                 jumpTo('/dashboard')
               }}
             >
-              Zack Market
+              Online Store
             </div>
           </div>
         </MediaQuery>
