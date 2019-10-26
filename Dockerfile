@@ -1,17 +1,20 @@
 FROM node:12
 
-ADD yarn.lock /yarn.lock
-ADD package.json /package.json
+# Create app directory
+RUN mkdir -p /webapp/backend
+WORKDIR /webapp/backend
 
-ENV NODE_PATH=/node_modules
-ENV PATH=$PATH:/node_modules/.bin
-RUN yarn
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json /webapp/backend/
 
-WORKDIR /webfront
-ADD . /webfront
-
+RUN npm install
+# If you are building your code for production
+# RUN npm ci --only=production
 EXPOSE 80
-#EXPOSE 35729
 
-ENTRYPOINT ["/bin/bash", "/app/run.sh"]
-CMD ["start"]
+# Bundle app source
+COPY . /webapp/backend/
+
+CMD [ "npm", "start" ]
